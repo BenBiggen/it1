@@ -1,0 +1,38 @@
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "screen"
+    "buttons";
+    width: 100%;
+    height: 100%;
+}
+
+.game {
+    display: block;
+    width: 330px;
+    height: 400px;
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+header {
+    grid-area: header;
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    grid-area: screen;
+}
+
+.buttons {
+    grid-area: buttons;
+}
+
