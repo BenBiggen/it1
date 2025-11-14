@@ -1,4 +1,4 @@
-const jackpot = ["🍋‍🟩", "🍉", "🍋", "🍒"];
+const jackpot = ["🍋‍🟩", "🍉", "🍉", "🍉", "🍋",  "🍋", "🍋", "🍋", "🍋", "🍋", "🍒", "🍒", "🍒", "🍒", "🍒", "🍒", "🍒", "🍒", "🍒", "🍒", "🍇", "🍇", "🍇", "🍇", "🍍", "🍍", "🍌", "🍌", "🍌", "🍓", "🍓", "🍓", "🍓", "🍓", "🍓", "🍓"];
 let screen1;
 let screen2;
 let screen3;
@@ -10,50 +10,41 @@ button.addEventListener("click", () => {
   trekk();
 });
 
-function random() {
-    randomNumber = Math.random()*100
-    if (randomNumber<=50) {
-      screenNumber = "🍒"
-    } else {
-      if (randomNumber<=80) {
-        screenNumber = "🍋"
-      } else {
-        if (randomNumber<=95) {
-          screenNumber = "🍉"
-        } else {
-          screenNumber = "🍋‍🟩"
-        }
-      }
-    }
-};
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-function trekk() {
-    //screen1 = jackpot[Math.floor(Math.random() * jackpot.length)]
-    //screen2 = jackpot[Math.floor(Math.random() * jackpot.length)]
-    //screen3 = jackpot[Math.floor(Math.random() * jackpot.length)]
-    random()
-    screen1 = screenNumber
-    random()
-    screen2 = screenNumber
-    random()
-    screen3 = screenNumber
-    document.getElementById("screen1").innerText=screen1
-    document.getElementById("screen2").innerText=screen2
-    document.getElementById("screen3").innerText=screen3
-    if (screen1 == "🍒" && screen2 == "🍒" &&screen3 == "🍒") {
-      console.log("du har vunnet kirsebær jackpot")
-    } else {
-      if (screen1 == "🍋" && screen2 == "🍋" &&screen3 == "🍋") {
-        console.log("du har vunnet sitron jackpot")
-      } else {
-        if (screen1 == "🍉" && screen2 == "🍉" &&screen3 == "🍉") {
-          console.log("du har vunnet vannmelom jackpot")
-        } else {
-          if (screen1 == "🍋‍🟩" && screen2 == "🍋‍🟩" &&screen3 == "🍋‍🟩") {
-            console.log("du har vunnet lime jackpot")
-          } 
-        }
-      }
-    }
-};
+async function trekk() {
+  screen1 = ""
+  screen2 = ""
+  screen3 = ""
+  document.getElementById("screen1").innerText=screen1
+  document.getElementById("screen2").innerText=screen2
+  document.getElementById("screen3").innerText=screen3
 
+    for (let i = 0; i < 8; i++) {
+      screen1 = jackpot[Math.floor(Math.random() * jackpot.length)]
+      document.getElementById("screen1").innerText=screen1
+      await delay(200);
+    }
+
+    for (let i = 0; i < 8; i++) {
+      screen2 = jackpot[Math.floor(Math.random() * jackpot.length)];
+      document.getElementById("screen2").innerText=screen2;
+      await delay(200);
+    }
+
+      for (let i = 0; i < 8; i++) {
+      screen3 = jackpot[Math.floor(Math.random() * jackpot.length)];
+      document.getElementById("screen3").innerText=screen3;
+      await delay(200);
+    }
+
+    if (screen1 === screen2 && screen2 === screen3) {
+      console.log(`Du har vunnet ${screen1} jackpot`);
+    }
+}
+
+    
+
+    
