@@ -1,3 +1,7 @@
+body {
+    background-color: green;
+}
+
 .grid-container {
     display: grid;
     grid-template-areas: 
@@ -19,6 +23,7 @@
     justify-content: center;
     align-items: center;
     font-size: 150px;
+    border-radius: 20px;
 }
 
 header {
@@ -43,5 +48,6 @@ header {
 
 #gambleButton {
     font-size: 80px;
+    border-radius: 20px;
 }
 
