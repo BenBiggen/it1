@@ -1,16 +1,19 @@
 body {
     background-color: green;
+    color: blanchedalmond;
 }
 
 .grid-container {
     display: grid;
     grid-template-areas: 
-    "header"
-    "screen"
-    "buttons";
+    "header jackpotDisplay"
+    "jackpot jackpotDisplay"
+    "screen jackpotDisplay"
+    "buttons jackpotDisplay";
     width: 100%;
     height: 100%;
     gap: 1rem;
+    grid-template-rows: auto auto 1fr auto;
 }
 
 .game {
@@ -32,12 +35,29 @@ header {
     justify-content: center;
 }
 
+.jackpot {
+    grid-area: jackpot;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+}
+
 .screen {
     display: flex;
     justify-content: center;
     flex-direction: row;
     gap: 10px;
     grid-area: screen;
+}
+
+.jackpotAntall {
+    display:flex;
+    flex-direction: column;
+    grid-area: jackpotDisplay;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
 
 .buttons {
