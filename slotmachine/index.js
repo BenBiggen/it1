@@ -24,18 +24,6 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-/*async function getNext() {
-  return new Promise(async resolve => {
-    let result;
-    for (let i = 0; i < 8; i++) {
-        result = array[Math.floor(Math.random() * array.length)];
-        element.innerText=screen2;
-        await delay(200);
-    }
-    resolve(result);
-  })
-} */
-
 async function trekk() {
   let array;
   trekkAntall++;
@@ -90,9 +78,7 @@ async function trekk() {
     if (screen1 === screen2 && screen2 === screen3) {
       console.log(`Du har vunnet ${screen1} jackpot`);
       document.getElementById("jackpotPrint").innerText=(`Du har vunnet ${screen1} jackpot`);
-    }
-    
-    if (screen1===screen2 && screen2===screen3) {
+
       if (screen1==="🍋‍🟩") {
         limeJackpots++;
         document.getElementById("limeJackpots").innerText="du har vunnet 🍋‍🟩 jackpot: " + limeJackpots + " gang(er)";
