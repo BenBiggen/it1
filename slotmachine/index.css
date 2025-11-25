@@ -69,5 +69,6 @@ header {
 #gambleButton {
     font-size: 80px;
     border-radius: 20px;
+    background-color: lightgrey;
 }
 
